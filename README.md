@@ -1,5 +1,5 @@
 # Zuerich3D.org
-Unity model of Zürich 88 km2 to simulate its citizens
+Simulations & Gamification Platform Zürich3D
 
 ## This page is still under construction !
 
