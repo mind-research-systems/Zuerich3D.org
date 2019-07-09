@@ -3,5 +3,5 @@ Simulations & Gamification Platform Zürich3D
 
 ## This page is still under construction !
 
-## Philip & da Goose
-![Kein Titel](https://user-images.githubusercontent.com/11026671/58023034-1fd09500-7b0f-11e9-9e10-4bae851a0123.png)
+## ZÜRICH 3D in the MATRIX
+![Screen Shot 2019-07-09 at 07 55 59](https://user-images.githubusercontent.com/52152977/60862854-38ac1b80-a21f-11e9-9217-c5ce8794c235.png)
