@@ -1,0 +1,151 @@
+---
+layout: inner-page
+---
+
+<section id ="product_dis">
+        <div class="category_full">
+            <div class="row">
+                <div class="col-md-9 col-sm-12">
+                    <div class=" main-pro-deatial">
+                    <div class="model-area">
+                            <div class="model-img">
+                                <img src="{{ page.image | relative_url}}" alt="car">
+                            </div>
+                            <div class="medel-review">
+                                <img src="{{ page.animator-pic | relative_url}}" alt="1">
+                                <p>{{page.animator-discription}} | <a href="#" class="folow"> Follow!</a>+ Add To </> Embed</p>
+                                <ul>
+                                    <li><a href="#"><i class="fas fa-eye"></i>{{page.views}}</a></li>
+                                    <li><a href="#"><i class="fas fa-heart"></i>{{page.likes}}</a></li>
+                                    <li><a href="#"><i class="fas fa-comment-alt"></i>{{page.comment}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class=event_time>
+
+                        <p>{% for keywords in page.keywords%}
+                            <button class="btn btn-default">{{keywords}}</button>
+                            {% endfor %}
+                            Published {{page.published | date_to_string }}</p>
+
+                </div>
+                </div>
+                 <div class="col-md-3 col-sm-12">
+                     <div class="price_atc">
+                         <h2>{{page.title}}</h2>
+                         <div class="sapce_review">
+                         <div class="inner_price"><p><span class="price">{{page.price}}</span></p>
+                         <p>Included Taxes & Checkup</p>
+                         </div>
+                         <div class="inner_price review_sec">
+                                <p>
+                                    <span class="review_star">
+                                      <a href="#"><i class="fas fa-star"></i></a>
+                                      <a href="#"><i class="fas fa-star"></i></a>
+                                      <a href="#"><i class="fas fa-star"></i></a>
+                                      <a href="#"><i class="fas fa-star"></i></a>
+                                      <a href="#"><i class="fas fa-star"></i></a>
+                                    </span>
+                                </p>
+                                 <p> 0 Review . <span class="add_review"> <a href="#">  Add Review</a></span> </p>
+                         </div>
+                         <div class="qty_input">
+                             <p>Quantity</p>
+                                <div class="qty_nmbr">
+                                    <span class="input-number-decrement">
+                                        <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]"> - </button>
+                                    </span>
+                                        <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+                                    <span class="input-number-increment">
+                                        <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]"> + </button>
+                                    </span>
+                                </div>
+                         </div>
+
+
+
+
+                         <div class="buy_btns">
+                             <button class="btn btn-default add_now"><img src="{{'images/atc-cart.png' | relative_url}}">Add to Cart</button>
+                             <button class="btn btn-default buy_now">Buy now with<img src="{{'images/pay-pal.png' | relative_url}}"></button>
+                         </div>
+                             <div class="inner_social">
+                        <ul>
+                            <li><a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{site.url}}{{page.url}}"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a class="insta" href="#"></i></a></li>
+                            <li><a class="twiter" href="https://twitter.com/home?status={{site.url}}{{page.url}}"><i class="fab fa-twitter"></i></a></li>
+                            <li><a class="linkdin" href="https://www.linkedin.com/shareArticle?mini=true&url={{site.url}}{{page.url}}"><i class="fab fa-linkedin-in"></i></a></li>
+                        </ul>
+
+                         </div>
+                          </div>
+
+                     </div>
+
+
+                     </div>
+
+
+            </div>
+            <div class="description_tab">
+                  <nav>
+                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Discriptions</a>
+                      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Comment</a>
+                      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Review! </a>
+                      <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false">Inspect the 3D Model</a>
+                    </div>
+                  </nav>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <p>{{ page.tab-discription }}</p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <p>{{page.tab-comment}}</p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        <p>{{page.tab-review}}</p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+                       <p>{{page.tab-model}}</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+
+   <section id="category_models" class="product-related category_full">
+        <div class="accordion__tab category_tab">
+        <ul id="tabs" class="nav nav-tabs" role="tablist">
+            <li class="head-nav"><span>Related 3D </span>Models</li>
+        </ul>
+        </div>
+       <div class="animal_model_list">
+            <ul>
+              {% for product in site.product | limit: 4 %}
+               <li class="model_list">
+                        <div class="model-area">
+                            <div class="model-img">
+                                <img src="{{ product.image | relative_url }}" alt="{{ product.title | relative_url }}">
+                            </div>
+                            <div class="model-description">
+                                <p>{{ product.description}}</p>
+                                <img src="{{ product.author-image  | relative_url}}" alt="1">
+                            </div>
+                            <div class="medel-review">
+                                <p><span class="price">{{ product.price}}</span></p>
+                                <ul>
+                                    <li><a href="#"><i class="fas fa-eye"></i>{{ product.views}}</a></li>
+                                    <li><a href="#"><i class="fas fa-heart"></i>{{ product.likes}}</a></li>
+                                    <li><a href="#"><i class="fas fa-comment-alt"></i>{{product.comment}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                </li>
+                {% endfor %}
+           </ul>
+
+       </div>
+    </section>

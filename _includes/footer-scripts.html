@@ -1,0 +1,325 @@
+{% if layout.common-ext-js %}
+  {% for js in layout.common-ext-js %}
+    {% include ext-js.html js=js %}
+  {% endfor %}
+{% endif %}
+
+{% if page.ext-js %}
+  {% for js in page.ext-js %}
+    {% include ext-js.html js=js %}
+  {% endfor %}
+{% endif %}
+
+{% if page.js %}
+  {% for js in page.js %}
+    <script src="{{ js | relative_url }}"></script>
+  {% endfor %}
+{% endif %}
+
+
+
+
+{% if layout.common-js %}
+  {% for js in layout.common-js %}
+    <script src="{{ js | relative_url }}"></script>
+  {% endfor %}
+{% endif %}
+
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDH2oTOn8bevio6682aIIXqngEf4qLLGh4",
+    authDomain: "zuerich3d-dev.firebaseapp.com",
+    databaseURL: "https://zuerich3d-dev.firebaseio.com",
+    projectId: "zuerich3d-dev",
+    storageBucket: "zuerich3d-dev.appspot.com",
+    messagingSenderId: "501436298903",
+    appId: "1:501436298903:web:6b3521aa7a5cdca9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+
+$(document).ready(function(){
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      loggedInUserChange(user);
+    } else {
+      loggedOutUserChange();
+    }
+  });
+
+
+
+  $('#logOutNav').click(function(){
+      firebase.auth().signOut();
+      window.location.href = "{{'/login' | relative_url}}";
+  });
+
+});
+
+
+function loggedInUserChange(user){
+  $('#accountNav').find('a').text(user.displayName);
+  $('#accountNav').show();
+  $('#logOutNav').show();
+  $('#registerNav').hide();
+  $('#loginNav').hide();
+
+
+
+}
+
+
+function loggedOutUserChange(){
+  $('#accountNav').hide();
+  $('#logOutNav').hide();
+  $('#registerNav').show();
+  $('#loginNav').show();
+}
+
+
+
+
+
+</script>
+       <script>
+           $(document).ready(function () {
+           $('.top-nav .dmenu').hover(function () {
+                   $(this).find('.sm-menu').first().stop(true, true).slideDown(150);
+               }, function () {
+                   $(this).find('.sm-menu').first().stop(true, true).slideUp(105)
+               });
+           });
+        </script>
+        <script>
+           $().ready(function(){
+             $('.slick-carousel').slick({
+               arrows: true,
+               centerPadding: "0px",
+               dots: false,
+               slidesToShow: 5,
+               infinite: false,
+            responsive: [{
+             breakpoint: 1440,
+             settings: {
+               slidesToShow: 4,
+               slidesToScroll: 1
+             }
+           },
+           {
+              breakpoint: 1023,
+              settings: {
+                 arrows: false,
+                 slidesToShow: 3,
+                 slidesToScroll: 1
+              }
+           },
+           {
+              breakpoint: 768,
+              settings: {
+                 arrows: false,
+                 slidesToShow: 2,
+                 slidesToScroll: 1
+              }
+           },
+           {
+              breakpoint: 576,
+              settings: {
+                 arrows: false,
+                 slidesToShow: 1,
+                 slidesToScroll: 1
+              }
+           }]
+       });
+       });
+
+
+       $(document).ready(function() {
+       $('.scroll-down').click (function() {
+       $('html, body').animate({scrollTop: $('section#tab-feild').offset().top }, 'slow');
+       return false;
+       });
+       });
+</script>
+
+
+{% if page.id %}
+  {% if page.id == 'register' %}
+    <script>
+      $('document').ready(function(){
+        $(".loginInnerPg").addClass("RegisterAddCls");
+        $(".loginInnerPg").removeClass("LoginAddCls");
+        $(".RegFormLg").delay(400).fadeIn();
+        $(".loginFormLg").fadeOut();
+      });
+    </script>
+  {% endif %}
+{% endif %}
+
+
+{% if page.id %}
+  {% if page.id == 'login' %}
+  <script>
+    $('document').ready(function(){
+      $(".loginInnerPg").addClass("LoginAddCls");
+      $(".loginInnerPg").removeClass("RegisterAddCls");
+      $(".RegFormLg").fadeOut();
+      $(".loginFormLg").delay(400).fadeIn();
+    });
+  </script>
+  {% endif %}
+{% endif %}
+
+
+{% if page.type %}
+  {% if page.type == 'auth' %}
+  <script>
+    $(document).ready(function(){
+      firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            window.location.href = "{{ site.url }}";
+          }
+      });
+    });
+  </script>
+  <script>
+      $('#register-form').submit(function(e){
+        e.preventDefault();
+          createNewUser()
+      });
+  </script>
+  <script>
+      $('#login-form').submit(function(e){
+        e.preventDefault();
+        toggleSignIn();
+      });
+  </script>
+
+  <script type="text/javascript">
+      $(document).ready(function(){
+          $(".loginBg .regBtn").click(function(){
+              $(".loginInnerPg").addClass("RegisterAddCls");
+              $(".loginInnerPg").removeClass("LoginAddCls");
+              $(".RegFormLg").delay(400).fadeIn();
+              $(".loginFormLg").fadeOut();
+          });
+      });
+
+      $(document).ready(function(){
+          $(".loginBg .logBtn").click(function(){
+              $(".loginInnerPg").addClass("LoginAddCls");
+              $(".loginInnerPg").removeClass("RegisterAddCls");
+              $(".RegFormLg").fadeOut();
+              $(".loginFormLg").delay(400).fadeIn();
+          });
+      });
+  </script>
+  <script>
+  function createNewUser(){
+    var name = document.getElementById('zuerichRegisterName').value;
+    var email = document.getElementById('zuerichRegisterEmail').value;
+    var password = document.getElementById('zuerichRegisterPassword').value;
+     if (email.length < 4) {
+       alert('Please enter an email address.');
+       return;
+     }
+     if (password.length < 4) {
+       alert('Please enter a password.');
+       return;
+     }
+     // Sign in with email and pass.
+     // [START createwithemail]
+     firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
+          // callSomeFunction(); Optional
+          var user = firebase.auth().currentUser;
+          user.updateProfile({
+              displayName: name
+          }).then(function() {
+              // Update successful.
+          }, function(error) {
+              // An error happened.
+          });
+
+
+
+    var db = firebase.firestore();
+
+
+    db.collection("users").add({
+  uid: firebase.auth().currentUser.uid,
+  name: name,
+  email: firebase.auth().currentUser.email
+})
+.then(function(docRef) {
+  console.log("Document written with ID: ", docRef.id);
+  window.location.href = "{{ site.url}}";
+})
+.catch(function(error) {
+  console.error("Error adding document: ", error);
+});
+
+     }).catch(function(error) {
+       // Handle Errors here.
+       var errorCode = error.code;
+       var errorMessage = error.message;
+       // [START_EXCLUDE]
+       if (errorCode == 'auth/weak-password') {
+         alert('The password is too weak.');
+       } else {
+         alert(errorMessage);
+       }
+       console.log(error);
+       // [END_EXCLUDE]
+     });
+     // [END createwithemail]
+  }
+
+
+  function toggleSignIn() {
+    if (firebase.auth().currentUser) {
+      // [START signout]
+      firebase.auth().signOut();
+      // [END signout]
+    } else {
+      var email = document.getElementById('zuerichLoginEmail').value;
+      var password = document.getElementById('zuerichLoginPassword').value;
+      if (email.length < 4) {
+        alert('Please enter an email address.');
+        return;
+      }
+      if (password.length < 4) {
+        alert('Please enter a password.');
+        return;
+      }
+      // Sign in with email and pass.
+      // [START authwithemail]
+      firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
+        window.location.href = "{{'/login' | relative_url}}";
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode === 'auth/wrong-password') {
+          alert('Wrong password.');
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+        document.getElementById('loginButton').disabled = false;
+        // [END_EXCLUDE]
+      });
+      // [END authwithemail]
+    }
+    document.getElementById('loginButton').disabled = true;
+  }
+  </script>
+
+
+  {% endif %}
+{% endif %}

@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+  <title>Register or Login</title>
+
+  <meta name="author" content="Some Person" />
+
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Zuerich 3d - A virtual proof that name is awesome!" href="/feed.xml" />
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" />
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/bootstrap-social.css" />
+    
+      <link rel="stylesheet" href="/custom.css" />
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.css" />
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
+  
+
+  
+
+  
+
+  
+
+    <!-- Facebook OpenGraph tags -->
+  
+
+  
+  <meta property="og:title" content="Register or Login" />
+  
+
+   
+  <meta property="og:description" content="
+    
+        
+            
+                    
+                        Log in to ZueRoch3D
+                        
+                            
+                                 Facebook!
+                                 Google!
+                                 Twitter!
+                            
+                            {{ page.register-heading-help-text }}
+                        
+                        
+                            
+                                
+                                  
+                                    
+                                  
+                                  
+                                    
+                                  
+                                  
+                                      
+                                          Forgot your password?
+                                      
+                                      
+                                         {{ page.register-intro-button-text}}
+                                      
+                                  
+                                
+                            
+                        
+                    
+                    
+                        {{page.register-heading}}
+                        
+                            
+                                 Facebook!
+                                 Google!
+                                 Twitter!
+                            
+                            {{ page.register-heading-help-text }}
+                        
+                        
+                            
+                                
+                                  
+                                    
+                                  
+                                  
+                                    
+                                  
+                                  
+                                    
+                                  
+                                  
+                                      
+                                         {{ page.register-button-text }}
+                                      
+                                  
+                                
+                            
+                        
+                    
+            
+            
+            
+                {{ page.register-intro-main-heading }}
+                {{ page.register-intro-sub-heading }}
+            
+            
+                {{ page.login-intro-main-heading }}
+                {{ page.login-intro-sub-heading }}
+            
+            
+                Register!Login!
+            
+            
+        
+    
+
+">
+  
+
+
+  <meta property="og:type" content="website" />
+
+  
+  <meta property="og:url" content="http://localhost:4000/login/" />
+  <link rel="canonical" href="http://localhost:4000/login/" />
+  
+
+  
+  <meta property="og:image" content="http://localhost:4000/img/avatar-icon.png" />
+  
+
+
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+  <meta name="twitter:title" content="Register or Login" />
+  
+
+  
+  <meta name="twitter:description" content="
+    
+        
+            
+                    
+                        Log in to ZueRoch3D
+                        
+                            
+                                 Facebook!
+                                 Google!
+                                 Twitter!
+                            
+                            {{ page.register-heading-help-text }}
+                        
+                        
+                            
+                                
+                                  
+                                    
+                                  
+                                  
+                                    
+                                  
+                                  
+                                      
+                                          Forgot your password?
+                                      
+                                      
+                                         {{ page.register-intro-button-text}}
+                                      
+                                  
+                                
+                            
+                        
+                    
+                    
+                        {{page.register-heading}}
+                        
+                            
+                                 Facebook!
+                                 Google!
+                                 Twitter!
+                            
+                            {{ page.register-heading-help-text }}
+                        
+                        
+                            
+                                
+                                  
+                                    
+                                  
+                                  
+                                    
+                                  
+                                  
+                                    
+                                  
+                                  
+                                      
+                                         {{ page.register-button-text }}
+                                      
+                                  
+                                
+                            
+                        
+                    
+            
+            
+            
+                {{ page.register-intro-main-heading }}
+                {{ page.register-intro-sub-heading }}
+            
+            
+                {{ page.login-intro-main-heading }}
+                {{ page.login-intro-sub-heading }}
+            
+            
+                Register!Login!
+            
+            
+        
+    
+
+">
+  
+
+  
+  <meta name="twitter:image" content="http://localhost:4000/img/avatar-icon.png" />
+  
+
+  
+
+  
+
+</head>
+
+
+  <body>
+
+    
+
+    <!-- TODO this file has become a mess, refactor it -->
+<header>
+            <div class="row align-items-center">
+                <div class="col headerNav">
+
+                       <nav class="navbar navbar-expand-lg  top-nav">
+                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            <span class="navbar-toggler-icon"></span>
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+
+                          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
+
+                      <ul class="navbar-nav">
+                       
+                         
+                           <li class="nav-item dropdown dmenu">
+                             <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" href="javascript:void(0)">Explore More</a>
+                             <div class="dropdown-menu sm-menu">
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/animal-pets">Animals & Pets</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/cars-vehicles">Cars & Vehicles</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/characters-creatures">Characters & Creatures</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/electronics-gadgets">Electronics & Gadgets</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/food-drinks">Food & Drinks</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/furniture-home">Furniture & Home</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/music">Music</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/nature-planets">Nature & Plants</a>
+
+                                 
+                               
+                             </div>
+                           </li>
+                         
+                         
+                         
+                           <li>
+                             
+
+
+
+
+
+
+<a class="nav-link" href="/category">Buy 3D Game Assets</a>
+
+                           </li>
+                         
+                         
+                         
+                           <li>
+                             
+
+
+
+
+
+
+<a class="nav-link" href="/">Sell</a>
+
+                           </li>
+                         
+                         
+                       </ul>
+
+                          </div>
+                        </nav>
+                </div>
+                <div class="col-auto headerLogo">
+                              <div class="brand-logo"><a class="navbar-brand" href="http://localhost:4000"><img src="/images/logo.png"></a></div>
+                </div>
+                <div class="col headerRightSec">
+
+                             <ul class="navbar-nav">
+                                <li class="nav-item cart-icn">
+                                  <a class="nav-link" href="/cart"><img src="/images/cart.png"><span>0</span></a>
+                                </li>
+                                 <li class="nav-item headerRightSecReg" id="registerNav">
+                                   <a class="nav-link" href="/register">Register</a>
+                                </li>
+
+                                  <li class="nav-item login-btn" id="loginNav">
+                                    <a class="nav-link" href="/login"><i class="fas fa-user"></i>Log In</a>
+                                  </li>
+
+
+                                <li class="nav-item headerRightSecReg" id="accountNav" style="display:none">
+                                    <a class="nav-link" href="#">Anonymous</a>
+                                 </li>
+
+                                <li class="nav-item login-btn" id="logOutNav" style="display:none">
+                                     <a class="nav-link" href="/login"><i class="fas fa-user"></i>Log Out</a>
+                                </li>
+                            </ul>
+                </div>
+            </div>
+         </header>
+
+
+
+
+
+
+
+<div class="play_art animal-bg">
+                <h3>Register or Login</h3>    
+</div>
+
+<nav aria-label="breadcrumb" class="breadcrumb">
+  <div class="category_full">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="http://localhost:4000">
+            Home
+          </a>
+        </li>
+        
+        <li class="breadcrumb-item active">
+          <a  href="/login/">
+            Register or Login
+          </a>
+        </li>
+      </ol>
+    </div>
+</nav>
+
+  <div class="loginMain">
+    <div class="container">
+        <div class="loginInnerPg">
+            <div class="loginForm">
+                    <div class="cmnFrm loginFormLg">
+                        <h3>Log in to <span>ZueRoch3D</span></h3>
+                        <div class="shareMainDiv">
+                            <div class="shareForm">
+                                <a href="#" class="shareFacebook"><i class="fab fa-facebook-f"></i> Facebook!</a>
+                                <a href="#" class="shareGoogle"><i class="fab fa-google"></i> Google!</a>
+                                <a href="#" class="shareTwitter"><i class="fab fa-twitter"></i> Twitter!</a>
+                            </div>
+                            <span>Or use your email for registration</span>
+                        </div>
+                        <div class="LogRegBothFrm">
+                            <div class="loginFormLft">
+                                <form method="post" id="login-form">
+                                  <div class="form-group">
+                                    <input type="email" class="form-control" name="email" id="zuerichLoginEmail" aria-describedby="emailHelp" placeholder="Email!">
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="password" class="form-control" name="password" id="zuerichLoginPassword" placeholder="Password">
+                                  </div>
+                                  <div class="logSubmit">
+                                      <div class="forgetPass">
+                                          <a href="#">Forgot your password?</a>
+                                      </div>
+                                      <div class="loginSubmit">
+                                         <button type="submit" id="loginButton" class="btn btn-primary">Login</button>
+                                      </div>
+                                  </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cmnFrm RegFormLg">
+                        <h3>Create <span> Account </span>
+</h3>
+                        <div class="shareMainDiv">
+                            <div class="shareForm">
+                                <a href="#" class="shareFacebook"><i class="fab fa-facebook-f"></i> Facebook!</a>
+                                <a href="#" class="shareGoogle"><i class="fab fa-google"></i> Google!</a>
+                                <a href="#" class="shareTwitter"><i class="fab fa-twitter"></i> Twitter!</a>
+                            </div>
+                            <span>Or use your email for registration</span>
+                        </div>
+                        <div class="LogRegBothFrm">
+                            <div class="loginFormLft">
+                                <form method="post" id="register-form">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" name="name" id="zuerichRegisterName" aria-describedby="nameHelp" placeholder="Name!">
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="email" class="form-control" name="register" id="zuerichRegisterEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="password" class="form-control" name="password" id="zuerichRegisterPassword" placeholder="Password">
+                                  </div>
+                                  <div class="logSubmit">
+                                      <div class="loginSubmit">
+                                         <button type="submit" id="registerButton" class="btn btn-primary">Create Account</button>
+                                      </div>
+                                  </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="mainContentDiv">
+            <div class="FormMnContent logCntnt">
+                <h3>Welcome, <span> Back </span>
+</h3>
+                <p>To keep connected with us please login with you personal info.</p>
+            </div>
+            <div class="FormMnContent RegCntnt">
+                <h3>Hello <span>Friend!</span>
+</h3>
+                <p>Enter your personal details and start journey with us.</p>
+            </div>
+            <div class="loginBg">
+                <a href="#"><span class="regBtn">Register!</span><span class="logBtn">Login!</span></a>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <footer>
+   <div class="newsletter-frm">
+       <h3>Sign Up for our Newsletter</h3>
+       <div class="search-bar">
+           <span><img src="/images/Newsletter-mail.png" alt="newsletter"></span>
+
+                   <div class="search-barSec">
+           <input id="search" type="text" class="form-control" name="search" placeholder="Subscribe to recieve our news everyday!">
+       <button class="btn btn-default"><i class="fas fa-paper-plane"></i></button>
+   </div>
+        </div>
+       </div>
+           <div class="copyright-section">
+               <div class="row">
+                   <div class="col-12 col-lg-3">
+                       <p>© 2019 ZueRich3D - All Rights Reserved.</p>
+                   </div>
+                    <div class="col-12 col-lg-6">
+                        <ul>
+                          
+                              <li>
+                                
+
+
+
+
+
+
+<a  href="/">Terms of service</a>
+
+                              </li>
+                            
+                              <li>
+                                
+
+
+
+
+
+
+<a  href="/">Refund Policy</a>
+
+                              </li>
+                            
+                              <li>
+                                
+
+
+
+
+
+
+<a  href="/">Privacy Policy</a>
+
+                              </li>
+                            
+                              <li>
+                                
+
+
+
+
+
+
+<a  href="/">Sitemap</a>
+
+                              </li>
+                            
+                        </ul>
+                   </div>
+                    <div class="col-12 col-lg-3">
+                     <ul class="social-icon">
+                       
+                           <li>
+                             <a href=""><i class="fab "></i></a>
+                           </li>
+                       
+                           <li>
+                             <a href=""><i class="fab "></i></a>
+                           </li>
+                       
+                           <li>
+                             <a href=""><i class="fab "></i></a>
+                           </li>
+                       
+                           <li>
+                             <a href=""><i class="fab "></i></a>
+                           </li>
+                       
+                           <li>
+                             <a href=""><i class="fab "></i></a>
+                           </li>
+                       
+                      </ul>
+                   </div>
+               </div>
+           </div>
+       </footer>
+
+
+    
+
+
+
+
+
+
+
+
+
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  
+    <script src="/js/main.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+  
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+  
+
+
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDH2oTOn8bevio6682aIIXqngEf4qLLGh4",
+    authDomain: "zuerich3d-dev.firebaseapp.com",
+    databaseURL: "https://zuerich3d-dev.firebaseio.com",
+    projectId: "zuerich3d-dev",
+    storageBucket: "zuerich3d-dev.appspot.com",
+    messagingSenderId: "501436298903",
+    appId: "1:501436298903:web:6b3521aa7a5cdca9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+
+$(document).ready(function(){
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      loggedInUserChange(user);
+    } else {
+      loggedOutUserChange();
+    }
+  });
+
+
+
+  $('#logOutNav').click(function(){
+      firebase.auth().signOut();
+      window.location.href = "/login";
+  });
+
+});
+
+
+function loggedInUserChange(user){
+  $('#accountNav').find('a').text(user.displayName);
+  $('#accountNav').show();
+  $('#logOutNav').show();
+  $('#registerNav').hide();
+  $('#loginNav').hide();
+
+
+
+}
+
+
+function loggedOutUserChange(){
+  $('#accountNav').hide();
+  $('#logOutNav').hide();
+  $('#registerNav').show();
+  $('#loginNav').show();
+}
+
+
+
+
+
+</script>
+       <script>
+           $(document).ready(function () {
+           $('.top-nav .dmenu').hover(function () {
+                   $(this).find('.sm-menu').first().stop(true, true).slideDown(150);
+               }, function () {
+                   $(this).find('.sm-menu').first().stop(true, true).slideUp(105)
+               });
+           });
+        </script>
+        <script>
+           $().ready(function(){
+             $('.slick-carousel').slick({
+               arrows: true,
+               centerPadding: "0px",
+               dots: false,
+               slidesToShow: 5,
+               infinite: false,
+            responsive: [{
+             breakpoint: 1440,
+             settings: {
+               slidesToShow: 4,
+               slidesToScroll: 1
+             }
+           },
+           {
+              breakpoint: 1023,
+              settings: {
+                 arrows: false,
+                 slidesToShow: 3,
+                 slidesToScroll: 1
+              }
+           },
+           {
+              breakpoint: 768,
+              settings: {
+                 arrows: false,
+                 slidesToShow: 2,
+                 slidesToScroll: 1
+              }
+           },
+           {
+              breakpoint: 576,
+              settings: {
+                 arrows: false,
+                 slidesToShow: 1,
+                 slidesToScroll: 1
+              }
+           }]
+       });
+       });
+
+
+       $(document).ready(function() {
+       $('.scroll-down').click (function() {
+       $('html, body').animate({scrollTop: $('section#tab-feild').offset().top }, 'slow');
+       return false;
+       });
+       });
+</script>
+
+
+
+  
+
+
+
+
+  
+  <script>
+    $('document').ready(function(){
+      $(".loginInnerPg").addClass("LoginAddCls");
+      $(".loginInnerPg").removeClass("RegisterAddCls");
+      $(".RegFormLg").fadeOut();
+      $(".loginFormLg").delay(400).fadeIn();
+    });
+  </script>
+  
+
+
+
+
+  
+  <script>
+    $(document).ready(function(){
+      firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            window.location.href = "http://localhost:4000";
+          }
+      });
+    });
+  </script>
+  <script>
+      $('#register-form').submit(function(e){
+        e.preventDefault();
+          createNewUser()
+      });
+  </script>
+  <script>
+      $('#login-form').submit(function(e){
+        e.preventDefault();
+        toggleSignIn();
+      });
+  </script>
+
+  <script type="text/javascript">
+      $(document).ready(function(){
+          $(".loginBg .regBtn").click(function(){
+              $(".loginInnerPg").addClass("RegisterAddCls");
+              $(".loginInnerPg").removeClass("LoginAddCls");
+              $(".RegFormLg").delay(400).fadeIn();
+              $(".loginFormLg").fadeOut();
+          });
+      });
+
+      $(document).ready(function(){
+          $(".loginBg .logBtn").click(function(){
+              $(".loginInnerPg").addClass("LoginAddCls");
+              $(".loginInnerPg").removeClass("RegisterAddCls");
+              $(".RegFormLg").fadeOut();
+              $(".loginFormLg").delay(400).fadeIn();
+          });
+      });
+  </script>
+  <script>
+  function createNewUser(){
+    var name = document.getElementById('zuerichRegisterName').value;
+    var email = document.getElementById('zuerichRegisterEmail').value;
+    var password = document.getElementById('zuerichRegisterPassword').value;
+     if (email.length < 4) {
+       alert('Please enter an email address.');
+       return;
+     }
+     if (password.length < 4) {
+       alert('Please enter a password.');
+       return;
+     }
+     // Sign in with email and pass.
+     // [START createwithemail]
+     firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
+          // callSomeFunction(); Optional
+          var user = firebase.auth().currentUser;
+          user.updateProfile({
+              displayName: name
+          }).then(function() {
+              // Update successful.
+          }, function(error) {
+              // An error happened.
+          });
+
+
+
+    var db = firebase.firestore();
+
+
+    db.collection("users").add({
+  uid: firebase.auth().currentUser.uid,
+  name: name,
+  email: firebase.auth().currentUser.email
+})
+.then(function(docRef) {
+  console.log("Document written with ID: ", docRef.id);
+  window.location.href = "http://localhost:4000";
+})
+.catch(function(error) {
+  console.error("Error adding document: ", error);
+});
+
+     }).catch(function(error) {
+       // Handle Errors here.
+       var errorCode = error.code;
+       var errorMessage = error.message;
+       // [START_EXCLUDE]
+       if (errorCode == 'auth/weak-password') {
+         alert('The password is too weak.');
+       } else {
+         alert(errorMessage);
+       }
+       console.log(error);
+       // [END_EXCLUDE]
+     });
+     // [END createwithemail]
+  }
+
+
+  function toggleSignIn() {
+    if (firebase.auth().currentUser) {
+      // [START signout]
+      firebase.auth().signOut();
+      // [END signout]
+    } else {
+      var email = document.getElementById('zuerichLoginEmail').value;
+      var password = document.getElementById('zuerichLoginPassword').value;
+      if (email.length < 4) {
+        alert('Please enter an email address.');
+        return;
+      }
+      if (password.length < 4) {
+        alert('Please enter a password.');
+        return;
+      }
+      // Sign in with email and pass.
+      // [START authwithemail]
+      firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
+        window.location.href = "/login";
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode === 'auth/wrong-password') {
+          alert('Wrong password.');
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+        document.getElementById('loginButton').disabled = false;
+        // [END_EXCLUDE]
+      });
+      // [END authwithemail]
+    }
+    document.getElementById('loginButton').disabled = true;
+  }
+  </script>
+
+
+  
+
+
+
+  </body>
+</html>

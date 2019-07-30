@@ -1,0 +1,105 @@
+---
+title: Register or Login
+layout: inner-page
+register-intro-main-heading : |
+    Welcome, <span> Back </span>
+register-intro-sub-heading :  To keep connected with us please login with you personal info.
+register-intro-button-text : Login
+register-heading: |
+    Create <span> Account </span>
+register-heading-help-text: Or use your email for registration
+register-name-placeholder: Name!
+register-email-placeholder: Email!
+register-password-placeholder: Password!
+register-button-text: Create Account
+login-intro-main-heading: |
+    Hello <span>Friend!</span>
+login-intro-sub-heading: Enter your personal details and start journey with us.
+login-intro-button-text: Register!
+type: auth
+id: register
+---
+
+<div class="loginMain">
+    <div class="container">
+        <div class="loginInnerPg">
+            <div class="loginForm">
+                    <div class="cmnFrm loginFormLg">
+                        <h3>Log in to <span>ZueRoch3D</span></h3>
+                        <div class="shareMainDiv">
+                            <div class="shareForm">
+                                <a href="#" class="shareFacebook"><i class="fab fa-facebook-f"></i> Facebook!</a>
+                                <a href="#" class="shareGoogle"><i class="fab fa-google"></i> Google!</a>
+                                <a href="#" class="shareTwitter"><i class="fab fa-twitter"></i> Twitter!</a>
+                            </div>
+                            <span>{{ page.register-heading-help-text }}</span>
+                        </div>
+                        <div class="LogRegBothFrm">
+                            <div class="loginFormLft">
+                                <form method="post" id="login-form">
+                                  <div class="form-group">
+                                    <input type="email" class="form-control" name="email" id="zuerichLoginEmail" aria-describedby="emailHelp" placeholder="Email!">
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="password" class="form-control" name="password" id="zuerichLoginPassword" placeholder="Password">
+                                  </div>
+                                  <div class="logSubmit">
+                                      <div class="forgetPass">
+                                          <a href="#">Forgot your password?</a>
+                                      </div>
+                                      <div class="loginSubmit">
+                                         <button type="submit" id="loginButton" class="btn btn-primary">{{ page.register-intro-button-text}}</button>
+                                      </div>
+                                  </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cmnFrm RegFormLg">
+                        <h3>{{page.register-heading}}</h3>
+                        <div class="shareMainDiv">
+                            <div class="shareForm">
+                                <a href="#" class="shareFacebook"><i class="fab fa-facebook-f"></i> Facebook!</a>
+                                <a href="#" class="shareGoogle"><i class="fab fa-google"></i> Google!</a>
+                                <a href="#" class="shareTwitter"><i class="fab fa-twitter"></i> Twitter!</a>
+                            </div>
+                            <span>{{ page.register-heading-help-text }}</span>
+                        </div>
+                        <div class="LogRegBothFrm">
+                            <div class="loginFormLft">
+                                <form method="post" id="register-form">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" name="name" id="zuerichRegisterName" aria-describedby="nameHelp" placeholder="Name!">
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="email" class="form-control" name="register" id="zuerichRegisterEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="password" class="form-control" name="password" id="zuerichRegisterPassword" placeholder="Password">
+                                  </div>
+                                  <div class="logSubmit">
+                                      <div class="loginSubmit">
+                                         <button type="submit" id="registerButton" class="btn btn-primary">{{ page.register-button-text }}</button>
+                                      </div>
+                                  </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="mainContentDiv">
+            <div class="FormMnContent logCntnt">
+                <h3>{{ page.register-intro-main-heading }}</h3>
+                <p>{{ page.register-intro-sub-heading }}</p>
+            </div>
+            <div class="FormMnContent RegCntnt">
+                <h3>{{ page.login-intro-main-heading }}</h3>
+                <p>{{ page.login-intro-sub-heading }}</p>
+            </div>
+            <div class="loginBg">
+                <a href="#"><span class="regBtn">Register!</span><span class="logBtn">Login!</span></a>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

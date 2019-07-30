@@ -1,0 +1,16 @@
+<section id="login-page">
+    <div class="banner-text animal-bg">
+        <h3>
+          {% if page.search-title%}
+            {{ page.search-title}}
+          {% else %}
+            {{ page.title}} 3D Models
+          {% endif %}
+        </h3>
+        <div class="search-bar">
+            <input id="search" type="text" class="form-control" name="search" placeholder="Search for 3D Models, Characters and Assets">
+            <button class="btn btn-default"><i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+</section>

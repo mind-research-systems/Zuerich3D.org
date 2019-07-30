@@ -1,0 +1,226 @@
+---
+layout: page
+title: My website
+subtitle: This is where I will tell my friends way too much about me
+use-site-title: true
+banner-main-title: Download the 3D Models, Characters & Assets
+banner-sub-title: Find everything from low poly assets to animated rigs & digital scans for your 3D, Character, and model.
+banner-search-placeholder: Search for 3D Models, Characters and Assets
+top-designer-heading: Top Designer This Week
+top-designer-sub-heading: Upload you 3D Models, Sell and Engage with your peers to become the top Member of [ZueRich3D](#zuerich) Community.
+---
+
+
+
+<section id="main-banner">
+     <div class="banner">
+         <div class="banner-text">
+             <h2>{{ page.banner-main-title}}</h2>
+             <p>{{page.banner-sub-title}}</p>
+             <div class="search-bar">
+                 <input id="search" type="text" class="form-control" name="search" placeholder="{{page.banner-search-placeholder}}">
+                 <button class="btn btn-default"><i class="fas fa-search"></i>
+                 </button>
+             </div>
+              <div class="more-detail">
+
+                  <a href="#" class="scroll-down" address="true"><input type="checkbox" id="switch" /><label for="switch"><i class="fas fa-long-arrow-alt-down"></i></label></a>
+              </div>
+         </div>
+     </div>
+ </section>
+<!--        banner  end-->
+<!--        accordion section start-->
+<section id="tab-feild">
+ <div class="accordion__tab">
+ <ul id="tabs" class="nav nav-tabs" role="tablist">
+     <li class="head-nav">3D <span>Models</span></li>
+     <li class="nav-item">
+         <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab"> New In </a>
+     </li>
+     <li class="nav-item">
+         <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">Collection</a>
+     </li>
+     <li class="nav-item">
+         <a id="tab-C" href="#pane-C" class="nav-link" data-toggle="tab" role="tab">Special</a>
+     </li>
+     <li class="nav-item">
+         <a id="tab-D" href="#pane-D" class="nav-link" data-toggle="tab" role="tab">Featured</a>
+     </li>
+ </ul>
+
+
+ <div id="content" class="tab-content" role="tablist">
+     <div id="pane-A" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-A">
+         <!-- Note: New place of `data-parent` -->
+         <div id="collapse-A" class="collapse show" data-parent="#content" role="tabpanel" aria-labelledby="heading-A">
+             <div class="card-body">
+                 <div class="row">
+                   {% assign newInProduct = site.product | where: "tags","New In" %}
+                   {% for product in newInProduct limit:4 %}
+                   <div class="col-sm-12 col-md-6 col-lg-3 mb-3">
+                       <div class="model-area">
+                           <div class="model-img">
+                               <a href="/product{{ product.slug | relative_url }}"><img src="{{ product.image | relative_url }}" alt="car"></a>
+                           </div>
+                           <div class="model-description">
+                               <p>{{ product.description}}</p>
+                               <img src="{{ product.animator-pic | relative_url}}" alt="1">
+                           </div>
+                           <div class="medel-review">
+                               <p><span class="price">{{ product.price}}</span></p>
+                               <ul>
+                                   <li><a href="#"><i class="fas fa-eye"></i>{{ product.views}}</a></li>
+                                   <li><a href="#"><i class="fas fa-heart"></i>{{ product.likes}}</a></li>
+                                   <li><a href="#"><i class="fas fa-comment-alt"></i>{{product.comment}}</a></li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+                   {% endfor %}
+
+                 </div>
+                 <div class="view-all"><a href="{{ '/tags/new' | relative_url }}">View All <i class="fas fa-long-arrow-alt-right"></i></a></div>
+             </div>
+         </div>
+     </div>
+
+     <div id="pane-B" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-B">
+
+         <div id="collapse-B" class="collapse" data-parent="#content" role="tabpanel" aria-labelledby="heading-B">
+             <div class="card-body">
+                 <div class="row">
+                   {% assign collectionProduct = site.product | where: "tags","Collection" %}
+                   {% for product in collectionProduct limit:4 %}
+                   <div class="col-sm-12 col-md-6 col-lg-3 mb-3">
+                       <div class="model-area">
+                           <div class="model-img">
+                               <a href="/product{{ product.slug | relative_url }}"><img src="{{ product.image | relative_url }}" alt="car"></a>
+                           </div>
+                           <div class="model-description">
+                               <p>{{ product.description}}</p>
+                               <img src="{{ product.animator-pic}}" alt="1">
+                           </div>
+                           <div class="medel-review">
+                               <p><span class="price">{{ product.price}}</span></p>
+                               <ul>
+                                   <li><a href="#"><i class="fas fa-eye"></i>{{ product.views}}</a></li>
+                                   <li><a href="#"><i class="fas fa-heart"></i>{{ product.likes}}</a></li>
+                                   <li><a href="#"><i class="fas fa-comment-alt"></i>{{product.comment}}</a></li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+                   {% endfor %}
+
+                 </div>
+                 <div class="view-all"><a href="{{ '/tags/collection' | relative_url }}">View All <i class="fas fa-long-arrow-alt-right"></i></a></div>
+             </div>
+         </div>
+     </div>
+
+     <div id="pane-C" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-C">
+
+         <div id="collapse-C" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-C">
+             <div class="card-body">
+                <div class="row">
+                  {% assign specialProduct = site.product | where: "tags","Special" %}
+                  {% for product in specialProduct limit:4 %}
+                  <div class="col-sm-12 col-md-6 col-lg-3 mb-3">
+                      <div class="model-area">
+                          <div class="model-img">
+                              <a href="/product{{ product.slug | relative_url }}"><img src="{{ product.image | relative_url }}" alt="car"></a>
+                          </div>
+                          <div class="model-description">
+                              <p>{{ product.description}}</p>
+                              <img src="{{ product.animator-pic | relative_url}}" alt="1">
+                          </div>
+                          <div class="medel-review">
+                              <p><span class="price">{{ product.price}}</span></p>
+                              <ul>
+                                  <li><a href="#"><i class="fas fa-eye"></i>{{ product.views}}</a></li>
+                                  <li><a href="#"><i class="fas fa-heart"></i>{{ product.likes}}</a></li>
+                                  <li><a href="#"><i class="fas fa-comment-alt"></i>{{product.comment}}</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+                  {% endfor %}
+
+                 </div>
+                 <div class="view-all"><a href="{{ '/tags/special' | relative_url }}">View All <i class="fas fa-long-arrow-alt-right"></i></a></div>
+             </div>
+         </div>
+     </div>
+
+      <div id="pane-D" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-D">
+
+         <div id="collapse-D" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-D">
+             <div class="card-body">
+                 <div class="row">
+                   {% assign featuredProduct = site.product | where: "tags","Featured" %}
+                   {% for product in featuredProduct limit:4 %}
+                   <div class="col-sm-12 col-md-6 col-lg-3 mb-3">
+                       <div class="model-area">
+                           <div class="model-img">
+                               <a href="/product{{ product.slug | relative_url }}"><img src="{{ product.image | relative_url }}" alt="car"></a>
+                           </div>
+                           <div class="model-description">
+                               <p>{{ product.description}}</p>
+                               <img src="{{ product.animator-pic | relative_url}}" alt="1">
+                           </div>
+                           <div class="medel-review">
+                               <p><span class="price">{{ product.price}}</span></p>
+                               <ul>
+                                   <li><a href="#"><i class="fas fa-eye"></i>{{ product.views}}</a></li>
+                                   <li><a href="#"><i class="fas fa-heart"></i>{{ product.likes}}</a></li>
+                                   <li><a href="#"><i class="fas fa-comment-alt"></i>{{product.comment}}</a></li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+                   {% endfor %}
+                 </div>
+                 <div class="view-all"><a href="{{ '/tags/featured' | relative_url }}">View All <i class="fas fa-long-arrow-alt-right"></i></a></div>
+             </div>
+         </div>
+     </div>
+ </div>
+ </div>
+     </section>
+     <!--        accordion section End-->
+<!--        top designer -->
+{% include designer.html %}
+<!-- End Top Designer -->
+ <section id="related-pro">
+     <div class="related-slider">
+         <h2 class="text-center">Best <span>Seller</span></h2>
+     <div class="slick-carousel">
+
+{% for product in site.product %}
+<div>
+   <div class="slide-content">
+   <div class="model-area">
+    <div class="model-img">
+      <a href="/product{{ product.slug | relative_url }}"><img src="{{ product.image | relative_url }}" alt="car"></a>
+     </div>
+       <div class="model-description">
+        <p>{{ product.description}}</p>
+        <img src="{{ product.animator-pic | relative_url}}" alt="1">
+         </div>
+        <div class="medel-review">
+            <p><span class="price">{{ product.price}}</span></p>
+         <ul>
+            <li><a href="#"><i class="fas fa-eye"></i>{{ product.views}}</a></li>
+             <li><a href="#"><i class="fas fa-heart"></i>{{ product.likes}}</a></li>
+              <li><a href="#"><i class="fas fa-comment-alt"></i>{{ product.comment}}</a></li>
+           </ul>
+        </div>
+       </div>
+   </div>
+   </div>
+  {% endfor %}
+
+</div>
+     </div>
+</section>

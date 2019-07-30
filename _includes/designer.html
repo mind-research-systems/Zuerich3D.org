@@ -1,0 +1,29 @@
+<section id="testimonial-img">
+     <div class="designer">
+         <div class="container">
+         <h2>{{page.top-designer-heading}}</h2>
+         <p>{{page.top-designer-sub-heading}}</p>
+         <div class="row ">
+           {% for designer in site.designer limit:3 %}
+
+                <div class="col-12 col-md-4 testimonialCol">
+                    <div class="client-img">
+                        <img src="{{designer.image | relative_url}}">
+                    </div>
+                    <div class="client-intro">
+                        <p class="auther-name"><b>{{designer.name}}</b>  <span>{{designer.role}}</span></p>
+                        <p>Followers: <span>{{designer.follower}}</span> </p>
+                        <p>Modles: <span>{{designer.models}}</span> </p>
+                        <a href="{{ designer.profile-link}}">Learn More <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+
+              {% endfor %}
+
+
+
+         </div>
+                <div class="view-all"><a href="#">Learn More</a></div>
+         </div>
+     </div>
+</section>

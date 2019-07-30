@@ -1,0 +1,144 @@
+---
+layout: inner-page
+---
+
+
+<!------------------------Header end---------------------->
+        <section id="range_tab" class="category_full">
+            <div class="rating_tab">
+                <div class="select_left">
+                    <ul class="progress_list">
+                        <li>
+
+                         <span>Categories</span>
+                         <div class="categry_filter">
+                             <div class="btn-group">
+                               <button type="button" class="btn btn-default " data-toggle="dropdown">
+                               {{ page.title }} </button>
+                               <ul class="dropdown-menu" role="menu">
+                                 {% for category in site.category %}
+                                   <li><a href="{{ category.slug}}" class="{% if category.title == page.title %}active{% endif %}">{{ category.title }}</a></li>
+                                 {% endfor %}
+                               </ul>
+                             </div>
+
+                         </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="select_right">
+                    <div class="progress_bar">
+                  <div class="select-wrapper range">
+        <div class="rangeslider">
+            <div id="behaviour" class="behaviour"></div>
+            <span id="slider-range-value1" class="val left"></span>
+            <span id="slider-range-value2" class="val right"></span>
+        </div>
+    </div>
+                    </div>
+                    <ul class="progress_list">
+                        <li>
+                        <span>Formats</span>
+                          <div class="categry_filter">
+                            <select>
+                              <option value="volvo">Any</option>
+                              <option value="saab">Any1</option>
+                              <option value="opel">Any2</option>
+                              <option value="audi">Any3</option>
+                            </select>
+                            </div>
+                        </li>
+                         <li>
+                        <span>Poly Count</span>
+                          <div class="categry_filter">
+                            <select>
+                              <option value="volvo">Any</option>
+                              <option value="saab">Any1</option>
+                              <option value="opel">Any2</option>
+                              <option value="audi">Any3</option>
+                            </select>
+                            </div>
+                        </li>
+                        <li>
+                        <span>Poly Count</span>
+                         <div class="categry_filter">
+                            <select>
+                              <option value="volvo">Any</option>
+                              <option value="saab">Any1</option>
+                              <option value="opel">Any2</option>
+                              <option value="audi">Any3</option>
+                            </select>
+                            </div>
+                        </li>
+                        <li>
+                        <span>Licenses</span>
+                           <div class="categry_filter">
+                            <select>
+                              <option value="volvo">Any</option>
+                              <option value="saab">Any1</option>
+                              <option value="opel">Any2</option>
+                              <option value="audi">Any3</option>
+                            </select>
+                            </div>
+                        </li>
+                         <li>
+                        <span>Rating</span>
+                          <div class="categry_filter">
+                            <select>
+                              <option value="volvo">Any</option>
+                              <option value="saab">Any1</option>
+                              <option value="opel">Any2</option>
+                              <option value="audi">Any3</option>
+                            </select>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+
+       <section id="category_models" class="weapons_militry category_full">
+            <div class="accordion__tab category_tab">
+            <ul id="tabs" class="nav nav-tabs" role="tablist">
+                <li class="head-nav"><span>Weapons & Military 3D </span>Models</li>
+                <li class="nav-item">
+                    <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab"> View All</a>
+                </li>
+            </ul>
+            </div>
+           <div class="animal_model_list">
+               <ul>
+                 {% assign filtered = site.product | where: "categories", page.title %}
+                 {% for product in filtered %}
+                   <li class="model_list">
+                            <div class="model-area">
+                                <div class="model-img">
+                                    <a href="/product{{ product.slug | relative_url }}"><img src="{{ product.image | relative_url }}" alt="{{ product.title }}"></a>
+                                </div>
+                                <div class="model-description">
+                                    <p>{{ product.description}}</p>
+                                    <img src="{{ product.animator-pic | relative_url}}" alt="1">
+                                </div>
+                                <div class="medel-review">
+                                    <p><span class="price">{{ product.price}}</span></p>
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-eye"></i>{{ product.views}}</a></li>
+                                        <li><a href="#"><i class="fas fa-heart"></i>{{ product.likes}}</a></li>
+                                        <li><a href="#"><i class="fas fa-comment-alt"></i>{{product.comment}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                  {% endfor %}
+                   <li class="model_list">
+                            <div class="model-area last-model">
+                               <a href="#">Load More</a>
+                            </div>
+                        </li>
+               </ul>
+           </div>
+
+        </section>

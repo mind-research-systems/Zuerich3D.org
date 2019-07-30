@@ -1,0 +1,150 @@
+---
+layout: inner-page
+title: Buy 3D Games Assets
+top-designer-heading: Top Designer This Week
+top-designer-sub-heading: Upload you 3D Models, Sell and Engage with your peers to become the top Member of [ZueRich3D](#zuerich) Community.
+search: true
+search-title : Download the 3D Models, Characters & Assets
+---
+  <section id="category-slider" class="category_full">
+
+      <h3>Browse by <span>Category</span></h3>
+         <div class="category_inner">
+  <div class="slick-carousel">
+
+
+    {%for category in site.category %}
+<div>
+  <a href="/category/{{category.slug}}">
+  <div class="slide-content">
+  <div class="category-img">
+      <img src="{{category.image | relative_url}}">
+ </div>
+       <p>{{category.title}}</p>
+  </div>
+  </a>
+</div>
+    {% endfor %}
+
+
+
+
+
+
+
+
+  </div>
+      </div>
+  </section>
+     <section id="category_model" class="category_full">
+      <div class="accordion__tab category_tab">
+      <ul id="tabs" class="nav nav-tabs" role="tablist">
+          <li class="head-nav"><span>Animals & Pets 3D </span>Models</li>
+          <li class="nav-item">
+              <a id="tab-A" href="/category/animal-pets" class="nav-link active"> View All</a>
+          </li>
+      </ul>
+      </div>
+
+      <div class="row">
+        {% assign animalProduct = site.product | where: "categories", product.category %}
+        {% for product in animalProduct limit:4 %}
+                  <div class="col">
+                      <div class="model-area">
+                          <div class="model-img">
+                              <a href="/product{{ product.slug | relative_url }}"><img src="{{ product.image | relative_url }}" alt="car"></a>
+                          </div>
+                          <div class="model-description">
+                              <p>{{ product.description}}</p>
+                              <img src="{{ product.animator-pic | relative_url}}" alt="1">
+                          </div>
+                          <div class="medel-review">
+                              <p><span class="price">{{ product.price}}</span></p>
+                              <ul>
+                                  <li><a href="#"><i class="fas fa-eye"></i>{{ product.views}}</a></li>
+                                  <li><a href="#"><i class="fas fa-heart"></i>{{ product.likes}}</a></li>
+                                  <li><a href="#"><i class="fas fa-comment-alt"></i>{{product.comment}}</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+          {% endfor %}
+         </div>
+  </section>
+  <section id="characters_creatures">
+     <div class="accordion__tab category_tab">
+      <ul id="tabs" class="nav nav-tabs" role="tablist">
+          <li class="head-nav"><span>Characters & Creatures 3D </span>Models</li>
+          <li class="nav-item">
+              <a id="tab-A" href="/category/characters-creatures" class="nav-link active"> View All</a>
+          </li>
+      </ul>
+      </div>
+
+      <div class="row category_full">
+        {% assign characterProduct = site.product | where: "categories","Characters & Creatures" %}
+        {% for product in characterProduct limit:4 %}
+                  <div class="col">
+                      <div class="model-area">
+                          <div class="model-img">
+                              <a href="/product{{ product.slug | relative_url }}"><img src="{{ product.image | relative_url }}" alt="car"></a>
+                          </div>
+                          <div class="model-description">
+                              <p>{{ product.description}}</p>
+                              <img src="{{ product.animator-pic | relative_url}}" alt="1">
+                          </div>
+                          <div class="medel-review">
+                              <p><span class="price">{{ product.price}}</span></p>
+                              <ul>
+                                  <li><a href="#"><i class="fas fa-eye"></i>{{ product.views}}</a></li>
+                                  <li><a href="#"><i class="fas fa-heart"></i>{{ product.likes}}</a></li>
+                                  <li><a href="#"><i class="fas fa-comment-alt"></i>{{product.comment}}</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+          {% endfor %}
+         </div>
+
+  </section>
+
+ <section id="category_models" class="weapons_militry category_full">
+      <div class="accordion__tab category_tab">
+      <ul id="tabs" class="nav nav-tabs" role="tablist">
+          <li class="head-nav"><span>Weapons & Military 3D </span>Models</li>
+          <li class="nav-item">
+              <a id="tab-A" href="/category/electronics-gadgets" class="nav-link active"> View All</a>
+          </li>
+      </ul>
+      </div>
+
+      <div class="row">
+        {% assign weaponProduct = site.product | where: "categories","Weapons & Military" %}
+        {% for product in weaponProduct limit:4 %}
+                  <div class="col">
+                      <div class="model-area">
+                          <div class="model-img">
+                              <a href="/product{{ product.slug | relative_url }}"><img src="{{ product.image | relative_url }}" alt="car"></a>
+                          </div>
+                          <div class="model-description">
+                              <p>{{ product.description}}</p>
+                              <img src="{{ product.animator-pic | relative_url}}" alt="1">
+                          </div>
+                          <div class="medel-review">
+                              <p><span class="price">{{ product.price}}</span></p>
+                              <ul>
+                                  <li><a href="#"><i class="fas fa-eye"></i>{{ product.views}}</a></li>
+                                  <li><a href="#"><i class="fas fa-heart"></i>{{ product.likes}}</a></li>
+                                  <li><a href="#"><i class="fas fa-comment-alt"></i>{{product.comment}}</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+
+          {% endfor %}
+
+         </div>
+  </section>
+<!-- Top Designer -->
+{% include designer.html  %}
+<!-- End Top Designer -->
